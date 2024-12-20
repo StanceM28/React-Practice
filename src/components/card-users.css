@@ -1,0 +1,139 @@
+ * {
+    font-family: "Times New Roman", Times, serif;
+  } 
+
+:root {
+   
+    --primary-color: #4e5d6c; 
+    --secondary-color: #6b7b8c; 
+    --text-color: #2c3e50; 
+    --background-color: #f4f4f4; 
+    --accent-color: #bfc7cf; 
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --hover-shadow-color: rgba(0, 0, 0, 0.15);
+    --white-opacity: rgba(255, 255, 255, 0.8);
+    --border-radius: 15px;
+    --padding: 1rem;
+    --font-small: 0.8rem;
+    --font-medium: 1rem;
+    --font-large: 1.2rem;
+}
+
+body {
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card-user {
+    position: relative;
+    background: var(--primary-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px var(--shadow-color);
+    overflow: hidden;
+    width: 300px;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.card-user:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px var(--hover-shadow-color);
+}
+
+.card-image-container {
+    width: 100%;
+    height: 180px;
+    background: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-user-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+.card-user:hover .card-user-image {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.card-user-name {
+    font-size: var(--font-large);
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--white-opacity);
+}
+
+.card-user-description {
+    font-size: var(--font-medium);
+    margin: 0;
+    color: white;
+    opacity: 0.9;
+    line-height: 1.5;
+    max-width: 80%;
+}
+
+
+
+.card-user-badged {
+    font-size: var(--font-small);
+    background-color: var(--secondary-color);
+    border-radius: 50px;
+    padding: 5px 15px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.1);
+    margin-top: 0.5rem;
+}
+
+.text-user-not-available {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-large);
+    width: 100%;
+    font-weight: bold;
+    padding: var(--padding);
+    background-color: #a94442;
+    color: white;
+    border-radius: var(--border-radius);
+}
+
+@media (max-width: 768px) {
+    .card-user {
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .card-user-name {
+        font-size: var(--font-medium);
+    }
+
+    .card-user-description {
+        font-size: var(--font-small);
+    }
+}
